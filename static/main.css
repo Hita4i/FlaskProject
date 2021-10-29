@@ -1,0 +1,6 @@
+h1 {color: green}
+
+input {color: blue}
+input:focus {color: red}
+button {color: red}
+.reg-title {color: red}
