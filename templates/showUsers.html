@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title%}
+Страница просмотра пользователей
+{% endblock %}
+--------------------------------------------------------
+{% block page_title %}
+Страница просмотра пользователей
+{% endblock %}
+--------------------------------------------------------
+{% block body%}
+{% for user in users %}
+<li>{{user.id}} - {{user.firstname}}</li>
+{% endfor %}
+
+{% endblock %}

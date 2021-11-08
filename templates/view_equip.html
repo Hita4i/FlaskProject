@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title%}
+Список оборудования
+{% endblock %}
+--------------------------------------------------------
+{% block page_title %}
+Список оборудования
+{% endblock %}
+--------------------------------------------------------
+{% block body%}
+<p>Список оборудования</p>
+
+<table class="table table-bordered table-hover table-sm">
+  <thead class="table table-dark">
+    <th>id</th>
+    <th>Оборудование</th>
+    <th>Номер об-ня</th>
+  </thead>
+{% for e in eq %}
+  <tr>
+    <td>{{e.id}}</td>
+    <td><a class="equip_href" href="">{{e.equipment}}</a></td>
+    <td>{{e.equipment_number}}</td>
+  </tr>
+{% endfor %}
+</table>
+
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title%}
+Страница входа
+{% endblock %}
+{% block page_title %}
+Добавить оборудование
+{% endblock %}
+{% block body%}
+        <form method="post">
+            <input type="text" name="equip" id="equip" placeholder="Введите название оборудования">
+            <input type="number" name="equip_number" id="equip_number" placeholder="Введите идн. оборудования">
+            <input type="number" name="user_id" id="user_id" placeholder="Введите номер обслуживающего персонала">
+            <input type="submit" value="добавить">
+        </form>
+<a href="http://127.0.0.1:5000/view_equip">Просмотр оборудования</a>
+{% endblock %}
