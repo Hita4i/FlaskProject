@@ -29,3 +29,6 @@ class Equip(db.Model):
     def __repr__(self):
         return f'{self.id} {self.equipment} {self.equipment_number} {self.user_id}'
 
+# n = Equip(equipment='DA', equipment_number=11)
+# db.session.add(n)
+# db.session.commit()
