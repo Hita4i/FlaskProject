@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request, redirect
-from flask_sqlalchemy import SQLAlchemy
-from base import db, User, Equip
+from base import app, db, User, Equip
 
-app = Flask(__name__)
 
 
 @app.route('/')
@@ -17,33 +15,26 @@ def login():
 
 
 @app.route('/edit_equip', methods=['POST', 'GET'])
-def create():
+def edit_equip():
     if request.method == 'POST':
-        equip = request.form.get('equip')
-        equip_number = request.form.get('equip_number')
+        equipment = request.form.get('equipment')
+        equipment_number = request.form.get('equipment_number')
         user_id = request.form.get('user_id')
-        n = Equip(equipment='DA', equipment_number=11)
-        db.session.add(n)
-        db.session.commit()
-        return redirect('/')
-    #     equip = request.form.get('equip')
-    #     equip_number = request.form.get('equip_number')
-    #     user_id = request.form.get('user_id')
-    #     new_equip = Equip(equipment=equip,
-    #                       equipment_number=equip_number)
-    #     print(equip, equip_number, user_id)
-    #     try:
-    #         db.session.add(n)
-    #         print('added')
-    #         db.session.commit()
-    #         print('oll ok')
-    #         return redirect('/')
-    #     except:
-    #         print('Ошибка добавления')
-    #         return redirect('/edit_equip.html')
+        new_equip = Equip(equipment=equipment,
+                          equipment_number=equipment_number,
+                          user_id=user_id)
+        try:
+            db.session.add(new_equip)
+            db.session.commit()
+            return redirect('/')
+        except:
+            return 'Ошибка добавления'
     else:
-        return render_template('/edit_equip.html')
+        return render_template('edit_equip.html')
 
+
+def reed():
+    pass
 
 if __name__ == '__main__':
     app.run(debug=True)

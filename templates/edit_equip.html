@@ -6,11 +6,25 @@
 Добавить оборудование
 {% endblock %}
 {% block body%}
-        <form method="post">
-            <input type="text" name="equip" id="equip" placeholder="Введите название оборудования">
-            <input type="number" name="equip_number" id="equip_number" placeholder="Введите идн. оборудования">
-            <input type="number" name="user_id" id="user_id" placeholder="Введите номер обслуживающего персонала">
+    <div class="conteiner">
+        <form class="col-2" method="post">
+            <div>
+            <label for="equipment">Введите название оборудования</label>
+            </div>
+            <input type="text" class="form-control" name="equipment" id="equipment" placeholder="Поле для воода">
+            <label for="equipment_number">Введите идн. оборудования</label>
+            <input type="number" class="form-control"  name="equipment_number" id="equipment_number" placeholder="Поле для воода">
+            <label for="user_id">Выберите персонал</label>
+            <select class="form-control" name="user_id" id="user_id">
+              <option>user1</option>
+              <option>user2</option>
+              <option>user3</option>
+              <option>user4</option>
+              <option>user5</option>
+            </select>
+<!--            <input type="number" class="form-control" name="user_id" id="user_id" placeholder="Введите номер обслуживающего персонала">-->
             <input type="submit" value="добавить">
         </form>
+    </div>
 <a href="http://127.0.0.1:5000/view_equip">Просмотр оборудования</a>
 {% endblock %}
