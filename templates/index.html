@@ -1,8 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'base_test.html' %}
 {% block title%}
 Главная страница
 {% endblock %}
 
 {% block body%}
-
+<form class="form" action="" method="post">
+  <input class="input" type="text" placeholder="Ваше имя">
+  <input class="input" type="password" placeholder="Пароль">
+  <button class="btn" type="submit">Войти</button>
+</form>
 {% endblock %}

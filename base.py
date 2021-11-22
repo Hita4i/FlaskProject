@@ -29,6 +29,10 @@ class Equip(db.Model):
     def __repr__(self):
         return f'{self.id} {self.equipment} {self.equipment_number} {self.user_id}'
 
+def create_db():
+    db.create_all()
+    db.session.commit()
 # n = Equip(equipment='DA', equipment_number=11)
 # db.session.add(n)
 # db.session.commit()
+create_db()

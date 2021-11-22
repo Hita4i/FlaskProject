@@ -1,40 +1,39 @@
-from flask import Flask, render_template, request, redirect
-from base import app, db, User, Equip
-
+from func import *
+import func
 
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html')
+    return func.index()
 
 
 @app.route('/login')
 def login():
-    return render_template('login.html')
+    return func.login()
+
+@app.route('/about_equip/<int:id>')
+def about_equip(eq_id):
+    return func.about_equip(eq_id)
+
+
+@app.route('/about_equip/<int:id>/del')
+def del_equip(eq_id):
+    return func.del_equip(eq_id)
 
 
 @app.route('/edit_equip', methods=['POST', 'GET'])
 def edit_equip():
-    if request.method == 'POST':
-        equipment = request.form.get('equipment')
-        equipment_number = request.form.get('equipment_number')
-        user_id = request.form.get('user_id')
-        new_equip = Equip(equipment=equipment,
-                          equipment_number=equipment_number,
-                          user_id=user_id)
-        try:
-            db.session.add(new_equip)
-            db.session.commit()
-            return redirect('/')
-        except:
-            return 'Ошибка добавления'
-    else:
-        return render_template('edit_equip.html')
+    return func.edit_equip()
 
+@app.route('/reg', methods=['POST', 'GET'])
+def reg():
+    return func.reg()
 
-def reed():
-    pass
+@app.route('/view_equip')
+def view_equip():
+    return func.view_equip()
+
 
 if __name__ == '__main__':
     app.run(debug=True)

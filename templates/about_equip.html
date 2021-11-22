@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title%}
+{{equip_list.equipment}}
+{% endblock %}
+
+{% block body%}
+{{equip_list.equipment}}
+<a href="" class="btn btn-outline-dark">Редактировать</a>
+<a href="/about_equip/{{equip_list.id}}/del" class="btn btn-danger">Удалить</a>
+{% endblock %}

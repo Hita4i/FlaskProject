@@ -9,27 +9,29 @@
     <title>{% block title%}Главная{% endblock %}</title>
 </head>
     <body>
+    <div class="container-xl">
    <header class="p-3 bg-dark text-white">
-    <div class="container">
+    <div class="container-xl">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="nav-link px-2 text-white">Главная</a>
+        <a href="/" class="nav-link px-2 text-white">Home</a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="http://127.0.0.1:5000/edit_equip" class="nav-link px-2 text-white">Edit equip</a></li>
-          <li><a href="/" class="nav-link px-2 text-white">Pricing</a></li>
+          <li><a href="http://127.0.0.1:5000/view_equip" class="nav-link px-2 text-white">View equip</a></li>
           <li><a href="/" class="nav-link px-2 text-white">FAQs</a></li>
           <li><a href="/" class="nav-link px-2 text-white">About</a></li>
         </ul>
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Register</button>
+          <a href="http://127.0.0.1:5000/login" class="btn btn-outline-light me-2">Login</a>
+          <a href="http://127.0.0.1:5000/reg" class="btn btn-warning">Register</a>
         </div>
       </div>
     </div>
   </header>
-        {% block body%}{% endblock %}
-
+        {% block body%}
+        {% endblock %}
+</div>
     </body>
 
 </html>

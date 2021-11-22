@@ -1,13 +1,17 @@
-{% extends 'base.html' %}
+{% extends 'base_test.html' %}
 {% block title%}
 Страница регистрации
 {% endblock %}
 --------------------------------------------------------
 {% block page_title %}
-Список оборудования
+Страница регистрации
 {% endblock %}
 --------------------------------------------------------
 {% block body%}
-<p>Страница регистрации</p>
-
+<form class="form" action="/reg" method="post">
+  <input class="input" name='name' type="text" placeholder="Ваше имя">
+  <input class="input" name='psw' type="password" placeholder="Пароль">
+  <input class="input" name='psw2' type="password" placeholder="Пароль еще раз">
+  <button class="btn" type="submit">Регистрация</button>
+</form>
 {% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>
+        {% block title%}
+        {% if title %}
+        <title>{{title}}</title>
+        {% else %}
+        <title>Equip base</title>
+        {% endif %}
+        {% endblock %}
+    </title>
+
+</head>
+
+
+<body>
+<div>
+{% block menu %}
+<ul>
+    <li><a href="index" data-text="Home">Home</a></li>
+    <li><a href="edit_equip" data-text="Edit equip">Edit equip</a></li>
+    <li><a href="view_equip" data-text="View equip">View equip</a></li>
+    <li><a href="login" data-text="Login">Login</a></li>
+    <li><a href="reg" data-text="Register">Register</a></li>
+</ul>
+{% endblock menu %}
+
+{% block page_title %}
+{% endblock page_title%}
+
+{% block body %}
+
+{% endblock body %}
+
+
+{% block footer %}
+{% endblock footer %}
+</div>
+</body>
+
+</html>
