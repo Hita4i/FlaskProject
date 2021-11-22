@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from base import app, db, User, Equip
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -34,13 +34,25 @@ def del_equip(eq_id):
 def reg():
     if request.method == 'POST':
         if len(request.form.get('name')) > 4 and \
+                len(request.form.get('email')) > 5 and \
                 len(request.form.get('psw')) > 4 and \
                 len(request.form.get('psw2')) > 4 \
                 and request.form.get('psw') == request.form.get('psw2'):
             pasw_hash = generate_password_hash(request.form.get('psw'))
             name = request.form.get('name')
+            email = request.form.get('email')
+            new_user = User(username=name,
+                            email=email,
+                            password=pasw_hash)
+            try:
+                db.session.add(new_user)
+                db.session.commit()
+                return login()
+            except:
+                flash('Ошибка регистрации')
+    else:
+        return render_template('registration.html')
 
-    return render_template('registration.html')
 
 
 def view_equip():
