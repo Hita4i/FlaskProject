@@ -16,13 +16,13 @@ def login():
     return render_template('login.html')
 
 
-def about_equip(eq_id):
-    equip_list = Equip.query.get(eq_id)
+def about_equip(id):
+    equip_list = Equip.query.get(id)
     return render_template('about_equip.html', equip_list=equip_list)
 
 
-def del_equip(eq_id):
-    equip_list = Equip.query.get_or_404(eq_id)
+def del_equip(id):
+    equip_list = Equip.query.get_or_404(id)
     try:
         db.session.delete(equip_list)
         db.session.commit()
