@@ -10,12 +10,17 @@
 
 
 {% block body%}
-<form class="form" action="" method="post">
-  <input class="input" type="text" placeholder="Ваше имя">
-  <input class="input" type="password" placeholder="Пароль">
-  <button class="btn" type="submit">Войти</button>
-  <a href="reg" data-text="Register">Register</a>
-</form>
+  <div class="reg_form">
+    <form method="post">
+      <input class="input" type="text" placeholder="Ваше имя">
+      <input class="input" type="password" placeholder="Пароль">
+      <button class="btn" type="submit">Войти</button>
+    </form>
+    <form action="/reg">
+      <button class="btn" title="Register">Register</button>
+    </form>
+
+  </div>
 {% endblock body%}
 
 {% block footer %}

@@ -18,15 +18,26 @@
 
 
 <body>
-<div>
 {% block menu %}
-<ul>
-    <li><a href="index" data-text="Home">Home</a></li>
-    <li><a href="edit_equip" data-text="Edit equip">Edit equip</a></li>
-    <li><a href="view_equip" data-text="View equip">View equip</a></li>
-    <li><a href="login" data-text="Login">Login</a></li>
-    <li><a href="reg" data-text="Register">Register</a></li>
-</ul>
+    <div class="menu_block">
+        <ul>
+            <li>
+                <a class="a_in_menu" href="{{ url_for('index') }}" data-text="Home">Home</a>
+            </li>
+            <li>
+                <a class="a_in_menu" href="{{ url_for('edit_equip') }}" data-text="Edit equip">Edit equip</a>
+            </li>
+            <li>
+                <a class="a_in_menu" href="{{ url_for('view_equip') }}" data-text="View equip">View equip</a>
+            </li>
+            <li>
+                <a class="a_in_menu1" href="{{ url_for('login') }}" data-text="Login">Login</a>
+            </li>
+            <li>
+                <a class="a_in_menu1" href="{{ url_for('reg') }}" data-text="Register">Register</a>
+            </li>
+        </ul>
+    </div>
 {% endblock menu %}
 
 {% block page_title %}
@@ -39,7 +50,7 @@
 
 {% block footer %}
 {% endblock footer %}
-</div>
+
 </body>
 
 </html>

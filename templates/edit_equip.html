@@ -5,12 +5,14 @@
 
 
 {% block page_title %}
-Добавить оборудование
+
 {% endblock page_title%}
 
 {% block body%}
-    <div class="conteiner">
-        <form class="col-2" method="post">
+    <div class="block2">
+        <h2>Добавить оборудование</h2>
+
+        <form method="post">
             <div>
                 <label for="equipment">Введите название оборудования</label>
             </div>
@@ -21,7 +23,7 @@
                 <label for="equipment_number">Введите идн. оборудования</label>
             </div>
             <div>
-                <input type="number" class="form-control"  name="equipment_number" id="equipment_number" placeholder="Поле для воода">
+                <input type="number" class="form-control"  name="equipment_number" id="equipment_number" placeholder="Поле для ввода">
             </div>
             <div>
                 <label for="users">Выберите персонал</label>
@@ -32,10 +34,14 @@
 
                 </select>
             </div>
-                <button type="submit" class="btn-2" >добавить</button>
+                <button type="submit" class="btn" >добавить</button>
+
         </form>
+            <form action="view_equip">
+                <button>Просмотр оборудования</button>
+            </form>
         </div>
             <div>
-                <a href="http://127.0.0.1:5000/view_equip">Просмотр оборудования</a>
+
             </div>
 {% endblock %}

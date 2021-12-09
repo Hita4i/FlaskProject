@@ -1,11 +1,14 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'jn5wpthp9gdsfn432lnnvsd'
 app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{ROOT_DIR}/test.db'
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 
 class User(db.Model):

@@ -4,12 +4,14 @@
 {% endblock %}
 --------------------------------------------------------
 {% block page_title %}
-Список оборудования
+
 {% endblock %}
 --------------------------------------------------------
 {% block body%}
-<table class="table table-bordered table-hover table-sm">
-  <thead class="table table-dark">
+<div class="block2">
+<table>
+  <thead>
+  <b>Список оборудования</b>
     <th>id</th>
     <th>Оборудование</th>
     <th>Номер об-ня</th>
@@ -18,17 +20,19 @@
   <tbody>
 {% for e in equip_list %}
 
-    <tr class="table-light">
-    <td>{{e.eq_id}}</td>
-    <td><button class="btn btn-outline-dark">{{e.equipment}}</button></td>
-    <td>{{e.equipment_number}}</td>
-    <td>{{e.user_id}}</td>
-        <td><a href="/about_equip/{{ e.id }}" class="btn btn-outline-dark">Подробней</a></td>
+    <tr>
+        <td>{{e.id}}</td>
+        <td>
+            <form action="/about_equip/{{ e.id }}" title="Подробней"><button>{{e.equipment}}</button></form>
+        </td>
+        <td>{{e.equipment_number}}</td>
+        <td>{{e.user_id}}</td>
+
     </tr>
 {% endfor %}
   </tbody>
 
 </table>
-
+</div>
 
 {% endblock %}

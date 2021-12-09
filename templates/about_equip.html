@@ -1,10 +1,14 @@
-{% extends 'base.html' %}
+{% extends 'base_test.html' %}
 {% block title%}
 {{equip_list.equipment}}
 {% endblock %}
 
 {% block body%}
-{{equip_list.equipment}}
-<a href="" class="btn btn-outline-dark">Редактировать</a>
-<a href="/about_equip/{{equip_list.id}}/del" class="btn btn-danger">Удалить</a>
+<b>{{equip_list.equipment}}</b>
+    <form action="">
+        <button>Редактировать</button>
+    </form>
+    <form action="about_equip/{{equip_list.id}}/del">
+        <button>Удалить</button>
+    </form>
 {% endblock %}
