@@ -3,6 +3,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
+'''$env:FLASK_APP="base.py" '''
+
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'jn5wpthp9gdsfn432lnnvsd'

@@ -1,8 +1,8 @@
 html{
-background: #F5F5F5;
+background-image: url("1.jpg")
+
 }
 .menu_block {
-    width: ;
     text-align: center;
     border: 2px solid #505050;
     height: 60px;
@@ -49,8 +49,7 @@ background: #F5F5F5;
     border-radius: 8px;
     padding: 5px 10px;
     margin: 5px;
-    background:#EBEBEB;
-    background-image: url("1.jpg");
+
 }
 .bot1{
     text-decoration: none;
