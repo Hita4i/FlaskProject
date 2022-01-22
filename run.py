@@ -12,6 +12,7 @@ def index():
 def login():
     return func.login()
 
+
 @app.route('/about_equip/<int:id>')
 def about_equip(id):
     return func.about_equip(id)
@@ -26,9 +27,11 @@ def del_equip(id):
 def edit_equip():
     return func.edit_equip()
 
+
 @app.route('/reg', methods=['POST', 'GET'])
 def reg():
     return func.reg()
+
 
 @app.route('/view_equip')
 def view_equip():

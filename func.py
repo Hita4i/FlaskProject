@@ -54,7 +54,6 @@ def reg():
         return render_template('registration.html')
 
 
-
 def view_equip():
     equip_list = Equip.query.all()
 
